@@ -15,7 +15,7 @@ description: >-
 
 # unslop
 
-People can smell AI text in one sentence. Usually it isn't one word. It's a stack of habits: the fake contrast, the drumroll question, three adjectives where one would do, every sentence the same length, the "hope this helps" at the end. This skill removes those habits **without** changing what the writer meant, and makes the result sound like *them*, not like a generic "human" voice.
+People can smell AI text in one sentence. What gives it away is a stack of habits: the fake contrast, the drumroll question, three adjectives where one would do, every sentence the same length, the "hope this helps" at the end. This skill removes those habits **without** changing what the writer meant, and makes the result sound like *them*, not like a generic "human" voice.
 
 Three tools make this better than "rewrite it more casually":
 

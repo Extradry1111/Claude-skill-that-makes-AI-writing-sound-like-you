@@ -125,8 +125,16 @@ def grade(score):
     return "ROBOTIC", red
 
 
+def mask_code(text):
+    """Blank out fenced code blocks (keeping line numbers) so `# comments` and
+    sample code don't count as prose."""
+    return re.sub(r"(?ms)^(```|~~~).*?^\1[^\n]*$",
+                  lambda m: "\n" * m.group(0).count("\n"), text)
+
+
 def scan_text(text, extra=None):
     pats, rhythm = load_patterns(extra)
+    text = mask_code(text)
     n_words = len(words(text))
     hits = []
     for p in pats:
