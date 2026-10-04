@@ -1,0 +1,426 @@
+{
+  "_comment": "Pattern library for unslop.py. Each entry: id, category, regex (case-insensitive), weight (how loudly it screams 'AI'), label, fix. Add your own with --extra my_patterns.json using the same shape.",
+  "patterns": [
+    {
+      "id": "vocab-delve",
+      "category": "ai-vocabulary",
+      "regex": "\\bdelv(e|es|ed|ing)\\b",
+      "weight": 3,
+      "label": "\"delve\"",
+      "fix": "look at, dig into, cover - or just start talking about the thing"
+    },
+    {
+      "id": "vocab-tapestry",
+      "category": "ai-vocabulary",
+      "regex": "\\b(rich |vibrant )?tapestry\\b",
+      "weight": 3,
+      "label": "\"tapestry\"",
+      "fix": "say what the parts actually are"
+    },
+    {
+      "id": "vocab-testament",
+      "category": "ai-vocabulary",
+      "regex": "\\b(a|is a|stands as a) testament to\\b",
+      "weight": 3,
+      "label": "\"a testament to\"",
+      "fix": "shows, proves - or cut the sentence"
+    },
+    {
+      "id": "vocab-realm",
+      "category": "ai-vocabulary",
+      "regex": "\\b(in|within) the (realm|world|landscape|sphere|domain) of\\b",
+      "weight": 2.5,
+      "label": "\"in the realm/world/landscape of\"",
+      "fix": "in, or name the field directly"
+    },
+    {
+      "id": "vocab-landscape",
+      "category": "ai-vocabulary",
+      "regex": "(?<!today's )\\b(ever[- ]?(evolving|changing)|rapidly (evolving|changing)|dynamic|competitive|modern|technological) landscape\\b",
+      "weight": 3,
+      "label": "\"ever-evolving landscape\"",
+      "fix": "name the actual market or situation"
+    },
+    {
+      "id": "vocab-navigate",
+      "category": "ai-vocabulary",
+      "regex": "\\bnavigat(e|es|ed|ing) (the )?(complexities|challenges|intricacies|world|landscape|waters)\\b",
+      "weight": 3,
+      "label": "\"navigate the complexities\"",
+      "fix": "deal with, handle, figure out"
+    },
+    {
+      "id": "vocab-intricacies",
+      "category": "ai-vocabulary",
+      "regex": "\\b(intricacies|intricate|multifaceted|nuanced)\\b",
+      "weight": 1.5,
+      "label": "intricate / multifaceted / nuanced",
+      "fix": "complicated, or explain the specific complication"
+    },
+    {
+      "id": "vocab-pivotal",
+      "category": "ai-vocabulary",
+      "regex": "\\b(pivotal|paramount|crucial|vital|indispensable)\\b",
+      "weight": 1.2,
+      "label": "pivotal / paramount / crucial",
+      "fix": "important, key - or show why it matters"
+    },
+    {
+      "id": "vocab-leverage",
+      "category": "ai-vocabulary",
+      "regex": "\\b(leverag(e|es|ed|ing)|utiliz(e|es|ed|ing)|harness(es|ed|ing)? the power)\\b",
+      "weight": 1.5,
+      "label": "leverage / utilize / harness",
+      "fix": "use"
+    },
+    {
+      "id": "vocab-seamless",
+      "category": "ai-vocabulary",
+      "regex": "\\b(seamless(ly)?|robust|cutting[- ]edge|state[- ]of[- ]the[- ]art|game[- ]?chang(er|ing)|groundbreaking|revolutioni[sz](e|ing))\\b",
+      "weight": 1.5,
+      "label": "seamless / robust / cutting-edge / game-changer",
+      "fix": "say what it does and let the reader judge"
+    },
+    {
+      "id": "vocab-foster",
+      "category": "ai-vocabulary",
+      "regex": "\\b(foster(s|ed|ing)?|cultivat(e|es|ed|ing)|empower(s|ed|ing)?|elevat(e|es|ed|ing)|unlock(s|ed|ing)? (the|your|new)|embark(s|ed|ing)?)\\b",
+      "weight": 1.5,
+      "label": "foster / empower / elevate / unlock / embark",
+      "fix": "build, help, improve, start"
+    },
+    {
+      "id": "vocab-showcase",
+      "category": "ai-vocabulary",
+      "regex": "\\b(showcas(e|es|ed|ing)|underscor(e|es|ed|ing)|highlight(s|ed|ing)? the importance|boast(s|ed|ing)?)\\b",
+      "weight": 1.5,
+      "label": "showcase / underscore / boasts",
+      "fix": "shows, has"
+    },
+    {
+      "id": "vocab-meticulous",
+      "category": "ai-vocabulary",
+      "regex": "\\b(meticulous(ly)?|commendable|noteworthy|bustling|vibrant|enchanting|captivating|breathtaking)\\b",
+      "weight": 1.5,
+      "label": "meticulous / vibrant / bustling",
+      "fix": "a concrete detail beats an adjective"
+    },
+    {
+      "id": "vocab-journey",
+      "category": "ai-vocabulary",
+      "regex": "\\b(my|your|our|the|this) journey\\b",
+      "weight": 1.5,
+      "label": "\"journey\" (not travel)",
+      "fix": "the actual thing: career, project, year"
+    },
+    {
+      "id": "vocab-synergy",
+      "category": "ai-vocabulary",
+      "regex": "\\b(synerg(y|ies|istic)|holistic(ally)?|paradigm( shift)?|actionable insights|value[- ]add|deep dive)\\b",
+      "weight": 1.5,
+      "label": "synergy / holistic / paradigm / deep dive",
+      "fix": "plain words"
+    },
+    {
+      "id": "vocab-moreover",
+      "category": "ai-vocabulary",
+      "regex": "(^|[.!?]\\s+)(Moreover|Furthermore|Additionally|Consequently|Notably|Importantly|Indeed|Thus),",
+      "weight": 1.2,
+      "label": "Moreover, / Furthermore, / Additionally,",
+      "fix": "drop it, or use 'also', 'and', 'so'"
+    },
+    {
+      "id": "vocab-crucial-role",
+      "category": "ai-vocabulary",
+      "regex": "\\bplays? an? (crucial|key|vital|pivotal|important|significant) role\\b",
+      "weight": 2.5,
+      "label": "\"plays a crucial role\"",
+      "fix": "say what it does"
+    },
+    {
+      "id": "vocab-fast-paced",
+      "category": "ai-vocabulary",
+      "regex": "\\b(in )?today'?s (?:[\\w-]+ ){0,2}(world|age|era|environment|landscape|market|climate|economy)\\b",
+      "weight": 3,
+      "label": "\"in today's fast-paced world\"",
+      "fix": "delete - nobody needs the era described"
+    },
+    {
+      "id": "struct-not-x-but-y",
+      "category": "fake-contrast",
+      "regex": "\\b(?:(?:it'?s|this is|that'?s|it was|this was|that was)\\s+not|isn'?t|wasn'?t|aren'?t|weren'?t|is not|are not|was not)\\s+(?:just\\s+|only\\s+|merely\\s+|simply\\s+|really\\s+)?(?:about\\s+)?[^.;!?\\n]{1,60}?(?:[,;—–]|\\s-\\s|\\.)\\s*(?:it'?s|it is|this is|that'?s|it was|they'?re|but)\\b",
+      "weight": 3,
+      "label": "\"It's not X, it's Y\" / \"This isn't about X. It's about Y\"",
+      "fix": "just say Y. The fake contrast is the #1 AI tell"
+    },
+    {
+      "id": "struct-not-only",
+      "category": "fake-contrast",
+      "regex": "\\bnot only\\b[^.!?\\n]{1,80}\\bbut (also)?\\b",
+      "weight": 1.5,
+      "label": "\"not only... but also\"",
+      "fix": "use 'and'"
+    },
+    {
+      "id": "struct-less-more",
+      "category": "fake-contrast",
+      "regex": "\\bless (about|of) [^.!?\\n]{1,40}(and )?more (about|of)\\b",
+      "weight": 2,
+      "label": "\"less about X, more about Y\"",
+      "fix": "say Y"
+    },
+    {
+      "id": "struct-reveal-question",
+      "category": "dramatic-reveal",
+      "regex": "(^|[.!?]\\s+)(The (result|answer|catch|kicker|secret|truth|problem|twist|best part|difference)|The real (question|answer|problem)|Why|How|What happened|The outcome)\\?\\s",
+      "weight": 2.5,
+      "label": "\"The result? ...\" self-answered question",
+      "fix": "state the result in a normal sentence"
+    },
+    {
+      "id": "struct-heres-the-thing",
+      "category": "dramatic-reveal",
+      "regex": "\\b(here'?s the thing|here'?s the (kicker|catch|truth|deal|secret)|but here'?s where it gets interesting|and that'?s the point|let that sink in|read that again)\\b",
+      "weight": 2.5,
+      "label": "\"Here's the thing:\" / \"Let that sink in\"",
+      "fix": "cut the drumroll; say the thing"
+    },
+    {
+      "id": "struct-colon-reveal",
+      "category": "dramatic-reveal",
+      "regex": "\\b(one thing|the answer|the key|the secret|the lesson|the truth|the reason|the result) (is|was) (simple|clear|this)\\s*[:.\\u2014]",
+      "weight": 2,
+      "label": "\"The answer is simple:\"",
+      "fix": "just give the answer"
+    },
+    {
+      "id": "open-hope-finds",
+      "category": "filler-opener",
+      "regex": "\\bi hope (this|my) (email|message|note) finds you( well)?\\b",
+      "weight": 3,
+      "label": "\"I hope this email finds you well\"",
+      "fix": "open with the reason you're writing"
+    },
+    {
+      "id": "open-great-question",
+      "category": "filler-opener",
+      "regex": "(^|\\n)\\s*(great|excellent|good|fantastic) question[!.]",
+      "weight": 3,
+      "label": "\"Great question!\"",
+      "fix": "answer the question"
+    },
+    {
+      "id": "open-certainly",
+      "category": "filler-opener",
+      "regex": "(^|\\n)\\s*(certainly|absolutely|of course|sure thing)[!,.] ",
+      "weight": 2.5,
+      "label": "\"Certainly!\" / \"Absolutely!\"",
+      "fix": "start with the content"
+    },
+    {
+      "id": "open-dive-in",
+      "category": "filler-opener",
+      "regex": "\\b(let'?s|let us) (dive|jump|delve|take a (closer|deep) look) (in|into)\\b",
+      "weight": 2.5,
+      "label": "\"Let's dive in\"",
+      "fix": "just start"
+    },
+    {
+      "id": "open-im-excited",
+      "category": "filler-opener",
+      "regex": "\\bi'?m (thrilled|excited|delighted|humbled|honored|pleased) to (announce|share|say|apply|let you know)\\b",
+      "weight": 2,
+      "label": "\"I'm thrilled to announce\"",
+      "fix": "say the news"
+    },
+    {
+      "id": "open-writing-to",
+      "category": "filler-opener",
+      "regex": "\\bi am writing to (express|inform|let you know|follow up|apply)\\b",
+      "weight": 1.5,
+      "label": "\"I am writing to express\"",
+      "fix": "the reader knows you're writing"
+    },
+    {
+      "id": "open-when-it-comes",
+      "category": "filler-opener",
+      "regex": "\\bwhen it comes to\\b",
+      "weight": 1,
+      "label": "\"when it comes to\"",
+      "fix": "for, with, or restructure"
+    },
+    {
+      "id": "close-hope-helps",
+      "category": "filler-closer",
+      "regex": "\\bi hope (this|that) (helps|was helpful|clarifies|gives you)\\b",
+      "weight": 2.5,
+      "label": "\"I hope this helps\"",
+      "fix": "end when the content ends"
+    },
+    {
+      "id": "close-let-me-know",
+      "category": "filler-closer",
+      "regex": "\\b(please )?(don'?t hesitate to|feel free to) (reach out|contact|let me know|ask)\\b",
+      "weight": 2,
+      "label": "\"Don't hesitate to reach out\"",
+      "fix": "one specific ask, or nothing"
+    },
+    {
+      "id": "close-any-questions",
+      "category": "filler-closer",
+      "regex": "\\blet me know if you have any (other |further |more )?(questions|thoughts|concerns)\\b",
+      "weight": 1.5,
+      "label": "\"Let me know if you have any questions\"",
+      "fix": "ask the one question you need answered"
+    },
+    {
+      "id": "close-in-conclusion",
+      "category": "filler-closer",
+      "regex": "(^|[.!?]\\s+|\\n)(in conclusion|in summary|to sum up|to summarize|all in all|ultimately|at the end of the day),",
+      "weight": 2,
+      "label": "\"In conclusion,\" / \"Ultimately,\"",
+      "fix": "the last point is the conclusion; skip the label"
+    },
+    {
+      "id": "close-happy-to-help",
+      "category": "filler-closer",
+      "regex": "\\b(happy|glad) to (help|assist|elaborate|discuss further)\\b",
+      "weight": 1.5,
+      "label": "\"Happy to help!\"",
+      "fix": "cut"
+    },
+    {
+      "id": "close-thoughts",
+      "category": "filler-closer",
+      "regex": "(^|\\n)\\s*(thoughts|agree|what do you think|what are your thoughts)\\?\\s*(\\S{1,4})?\\s*$",
+      "weight": 1.5,
+      "label": "LinkedIn \"Thoughts?\" / \"Agree?\" ending",
+      "fix": "ask a real question or none"
+    },
+    {
+      "id": "hedge-worth-noting",
+      "category": "hedging",
+      "regex": "\\bit'?s (worth noting|important to (note|remember|understand)|essential to|crucial to (note|remember|understand)|worth mentioning)\\b",
+      "weight": 2.5,
+      "label": "\"It's worth noting that\"",
+      "fix": "just note it"
+    },
+    {
+      "id": "hedge-generally",
+      "category": "hedging",
+      "regex": "\\b(generally speaking|in many cases|in some cases|to some extent|it can be argued|arguably|it depends on various factors)\\b",
+      "weight": 1.5,
+      "label": "generally speaking / to some extent",
+      "fix": "commit, or say what it depends on"
+    },
+    {
+      "id": "hedge-can-help",
+      "category": "hedging",
+      "regex": "\\b(can|may|could) (help|potentially|significantly) (to )?(improve|enhance|increase|boost|ensure)\\b",
+      "weight": 1.2,
+      "label": "\"can help improve\"",
+      "fix": "say what it does and by how much"
+    },
+    {
+      "id": "intens-truly",
+      "category": "empty-intensifier",
+      "regex": "\\b(truly|genuinely|incredibly|deeply|profoundly|undeniably|remarkably|absolutely essential)\\b",
+      "weight": 1,
+      "label": "truly / genuinely / incredibly",
+      "fix": "delete; the sentence gets stronger"
+    },
+    {
+      "id": "intens-passion",
+      "category": "empty-intensifier",
+      "regex": "\\b(passionate about|deeply committed to|strong passion for|dedicated to excellence)\\b",
+      "weight": 2,
+      "label": "\"passionate about\"",
+      "fix": "show one thing you did because of it"
+    },
+    {
+      "id": "syc-great-point",
+      "category": "sycophancy",
+      "regex": "\\b(you'?re (absolutely|completely|totally) right|what a (great|fantastic|wonderful) (idea|point|question)|that'?s a (great|fantastic|excellent) (point|idea|observation))\\b",
+      "weight": 2.5,
+      "label": "\"You're absolutely right!\"",
+      "fix": "agree with substance or not at all"
+    },
+    {
+      "id": "fmt-bold-label",
+      "category": "formatting",
+      "regex": "(^|\\n)\\s*([-*\\u2022]|\\d+\\.)\\s+\\*\\*[^*\\n]{2,40}:?\\*\\*:?",
+      "weight": 1,
+      "label": "**Bold label:** bullet",
+      "fix": "fine in docs; in emails and posts, write sentences"
+    },
+    {
+      "id": "fmt-emoji-bullet",
+      "category": "formatting",
+      "regex": "(^|\\n)\\s*(\\u2705|\\ud83d\\ude80|\\ud83d\\udca1|\\ud83d\\udd25|\\ud83d\\udc49|\\u2728|\\ud83c\\udfaf|\\ud83d\\udccc|\\u26a1|\\ud83d\\udcc8|\\ud83e\\udde0|\\ud83d\\udd11|\\u27a1\\ufe0f?)",
+      "weight": 1.5,
+      "label": "emoji-as-bullet (🚀 ✅ 💡 👉)",
+      "fix": "plain text or real bullets"
+    },
+    {
+      "id": "fmt-email-header",
+      "category": "formatting",
+      "regex": "(^|\\n)#{1,3} ",
+      "weight": 0.5,
+      "label": "markdown header",
+      "fix": "headers don't belong in emails, DMs or posts"
+    },
+    {
+      "id": "struct-ing-tail",
+      "category": "empty-analysis",
+      "regex": ", (highlighting|underscoring|emphasizing|showcasing|reflecting|demonstrating|signaling|symbolizing|ensuring|fostering|paving the way|contributing to|solidifying|cementing)\\b",
+      "weight": 2,
+      "label": "\", highlighting the importance of...\" tail",
+      "fix": "end the sentence at the fact; the tacked-on meaning is filler"
+    },
+    {
+      "id": "struct-serves-as",
+      "category": "empty-analysis",
+      "regex": "\\b(serves|stands|acts|functions) as (a|an|the)\\b",
+      "weight": 1.2,
+      "label": "\"serves as a\" (instead of \"is\")",
+      "fix": "is"
+    },
+    {
+      "id": "struct-vague-experts",
+      "category": "empty-analysis",
+      "regex": "\\b(experts|studies|research|many people|some critics|observers) (say|says|suggest|suggests|show|shows|believe|argue|agree)\\b",
+      "weight": 1.5,
+      "label": "\"experts say\" (no source)",
+      "fix": "name the source or drop the claim"
+    },
+    {
+      "id": "struct-from-to",
+      "category": "empty-analysis",
+      "regex": "\\bfrom [a-z]+ (and [a-z]+ )?to [a-z]+(,| and) (from|to) ",
+      "weight": 1.5,
+      "label": "\"from X to Y, from A to B\" false range",
+      "fix": "list the actual things, or pick one"
+    },
+    {
+      "id": "close-exciting-times",
+      "category": "filler-closer",
+      "regex": "\\b(the future (is|looks) bright|exciting times (are )?ahead|stay tuned|the possibilities are endless|only time will tell)\\b",
+      "weight": 2.5,
+      "label": "\"The future looks bright\"",
+      "fix": "end on the last real point"
+    }
+  ],
+  "rhythm": {
+    "em_dash_per_100_words_ok": 0.5,
+    "em_dash_weight": 2.0,
+    "triplet_per_100_words_ok": 0.6,
+    "triplet_weight": 1.2,
+    "burstiness_cv_ok": 0.35,
+    "burstiness_weight": 4.0,
+    "one_line_paragraph_ratio_ok": 0.6,
+    "one_line_paragraph_weight": 4.0,
+    "burstiness_min_sentences": 8,
+    "em_dash_min_count": 2,
+    "triplet_min_count": 2
+  }
+}

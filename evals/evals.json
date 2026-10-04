@@ -1,0 +1,67 @@
+{
+  "skill_name": "unslop",
+  "evals": [
+    {
+      "id": 1,
+      "name": "boss-email",
+      "prompt": "can u make this sound less like chatgpt wrote it? sending it to my boss sarah in like 10 min. file is inputs/slop_email.txt",
+      "expected_output": "Short, direct email with the $45,000 ask and Oct 14 launch intact, no AI tells, specific ask, placeholders for unknown specifics instead of invented ones.",
+      "files": [
+        "inputs/slop_email.txt"
+      ],
+      "assertions": [
+        "Final text Slop Score <= 15 (HUMAN)",
+        "$45,000 and October 14 survive the rewrite",
+        "Fact Lock passes vs original (no lost/invented numbers)",
+        "Email ends with a concrete ask (contains a question to Sarah)",
+        "Email body under 120 words"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "linkedin-in-my-voice",
+      "prompt": "rewrite my linkedin announcement (inputs/slop_linkedin.txt) so it sounds like me and not like a robot. here's two things i actually wrote myself so you get my style: inputs/voice_sample_1.txt and inputs/voice_sample_2.txt",
+      "expected_output": "LinkedIn post matching the user's casual lowercase voice, keeps Northwind, Head of Growth, Contoso, 40,000 -> 1.2M, 6 years; no staircase, no drumroll.",
+      "files": [
+        "inputs/slop_linkedin.txt",
+        "inputs/voice_sample_1.txt",
+        "inputs/voice_sample_2.txt"
+      ],
+      "assertions": [
+        "Final text Slop Score <= 15 (HUMAN)",
+        "Keeps Northwind, Contoso, 40,000, 1.2M",
+        "Keeps job title Head of Growth (any case)",
+        "Voice match >= 80% against the user's voiceprint",
+        "No emoji, no staircase of one-line paragraphs"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "cover-letter-from-scratch",
+      "prompt": "write me a cover letter for a junior data analyst role at Spotify. I have a stats degree from UC Davis and did a 6 month internship at Wells Fargo where I built a churn dashboard in Tableau that the retention team used every week. please dont make it sound AI generated, recruiters can tell",
+      "expected_output": "200-300 word cover letter, concrete, no 'passionate', no 'I am writing to express', no invented metrics.",
+      "files": [],
+      "assertions": [
+        "Final text Slop Score <= 15 (HUMAN)",
+        "Length 180-320 words",
+        "No cover-letter cliches (passionate, I am writing to express, fast-paced...)",
+        "No invented metrics (only numbers the user gave)",
+        "Mentions UC Davis, Wells Fargo, Tableau, retention team"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "roast-paragraph",
+      "prompt": "be honest, does this paragraph sound AI written? its for my blog intro. inputs/roast.txt",
+      "expected_output": "A clear verdict (yes), the specific tells quoted, and an offer or example of a fix.",
+      "files": [
+        "inputs/roast.txt"
+      ],
+      "assertions": [
+        "Gives a clear verdict that it reads as AI",
+        "Quotes at least 5 specific tells from the paragraph",
+        "Reports a measurable score"
+      ]
+    }
+  ]
+}

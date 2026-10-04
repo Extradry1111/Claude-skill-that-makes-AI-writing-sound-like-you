@@ -1,0 +1,390 @@
+{
+  "metadata": {
+    "skill_name": "unslop",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-10-04T18:30:00Z",
+    "evals_run": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 28.6,
+        "tokens": 60048,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Final text Slop Score <= 15 (HUMAN)",
+          "passed": true,
+          "evidence": "score 0"
+        },
+        {
+          "text": "$45,000 and October 14 survive the rewrite",
+          "passed": true,
+          "evidence": "checked substrings"
+        },
+        {
+          "text": "Fact Lock passes vs original (no lost/invented numbers)",
+          "passed": true,
+          "evidence": "{\"ok\": true, \"missing\": {}, \"invented_numbers\": []}"
+        },
+        {
+          "text": "Email ends with a concrete ask (contains a question to Sarah)",
+          "passed": true,
+          "evidence": "question mark present"
+        },
+        {
+          "text": "Email body under 120 words",
+          "passed": true,
+          "evidence": "73 words"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 43.3,
+        "tokens": 64091,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Final text Slop Score <= 15 (HUMAN)",
+          "passed": true,
+          "evidence": "score 0"
+        },
+        {
+          "text": "Keeps Northwind, Contoso, 40,000, 1.2M",
+          "passed": true,
+          "evidence": "missing []"
+        },
+        {
+          "text": "Keeps job title Head of Growth (any case)",
+          "passed": true,
+          "evidence": ""
+        },
+        {
+          "text": "Voice match >= 80% against the user's voiceprint",
+          "passed": true,
+          "evidence": "match 94%"
+        },
+        {
+          "text": "No emoji, no staircase of one-line paragraphs",
+          "passed": true,
+          "evidence": ""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 43.9,
+        "tokens": 61429,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Final text Slop Score <= 15 (HUMAN)",
+          "passed": true,
+          "evidence": "score 0"
+        },
+        {
+          "text": "Length 180-320 words",
+          "passed": true,
+          "evidence": "223 words"
+        },
+        {
+          "text": "No cover-letter cliches (passionate, I am writing to express, fast-paced...)",
+          "passed": true,
+          "evidence": "found []"
+        },
+        {
+          "text": "No invented metrics (only numbers the user gave)",
+          "passed": true,
+          "evidence": "extra numbers []"
+        },
+        {
+          "text": "Mentions UC Davis, Wells Fargo, Tableau, retention team",
+          "passed": true,
+          "evidence": ""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 23.2,
+        "tokens": 57292,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives a clear verdict that it reads as AI",
+          "passed": true,
+          "evidence": ""
+        },
+        {
+          "text": "Quotes at least 5 specific tells from the paragraph",
+          "passed": true,
+          "evidence": "8: [\"today's\", 'pivotal', 'not just a tool', 'from healthcare', 'moreover', 'actionable insights', 'important to note', 'navigate']"
+        },
+        {
+          "text": "Reports a measurable score",
+          "passed": true,
+          "evidence": ""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 19.0,
+        "tokens": 53144,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Final text Slop Score <= 15 (HUMAN)",
+          "passed": false,
+          "evidence": "score 25"
+        },
+        {
+          "text": "$45,000 and October 14 survive the rewrite",
+          "passed": true,
+          "evidence": "checked substrings"
+        },
+        {
+          "text": "Fact Lock passes vs original (no lost/invented numbers)",
+          "passed": true,
+          "evidence": "{\"ok\": true, \"missing\": {}, \"invented_numbers\": []}"
+        },
+        {
+          "text": "Email ends with a concrete ask (contains a question to Sarah)",
+          "passed": false,
+          "evidence": "no question"
+        },
+        {
+          "text": "Email body under 120 words",
+          "passed": true,
+          "evidence": "73 words"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 36.9,
+        "tokens": 55888,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Final text Slop Score <= 15 (HUMAN)",
+          "passed": true,
+          "evidence": "score 0"
+        },
+        {
+          "text": "Keeps Northwind, Contoso, 40,000, 1.2M",
+          "passed": true,
+          "evidence": "missing []"
+        },
+        {
+          "text": "Keeps job title Head of Growth (any case)",
+          "passed": true,
+          "evidence": ""
+        },
+        {
+          "text": "Voice match >= 80% against the user's voiceprint",
+          "passed": true,
+          "evidence": "match 81%"
+        },
+        {
+          "text": "No emoji, no staircase of one-line paragraphs",
+          "passed": true,
+          "evidence": ""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 38.5,
+        "tokens": 54236,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Final text Slop Score <= 15 (HUMAN)",
+          "passed": true,
+          "evidence": "score 11"
+        },
+        {
+          "text": "Length 180-320 words",
+          "passed": false,
+          "evidence": "360 words"
+        },
+        {
+          "text": "No cover-letter cliches (passionate, I am writing to express, fast-paced...)",
+          "passed": true,
+          "evidence": "found []"
+        },
+        {
+          "text": "No invented metrics (only numbers the user gave)",
+          "passed": true,
+          "evidence": "extra numbers []"
+        },
+        {
+          "text": "Mentions UC Davis, Wells Fargo, Tableau, retention team",
+          "passed": true,
+          "evidence": ""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.67,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 23.5,
+        "tokens": 53118,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives a clear verdict that it reads as AI",
+          "passed": true,
+          "evidence": ""
+        },
+        {
+          "text": "Quotes at least 5 specific tells from the paragraph",
+          "passed": true,
+          "evidence": "7: [\"today's\", 'pivotal', 'not just a tool', 'moreover', 'actionable insights', 'important to note', 'navigate']"
+        },
+        {
+          "text": "Reports a measurable score",
+          "passed": false,
+          "evidence": ""
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 34.75,
+        "stddev": 10.4571,
+        "min": 23.2,
+        "max": 43.9
+      },
+      "tokens": {
+        "mean": 60715.0,
+        "stddev": 2832.4895,
+        "min": 57292,
+        "max": 64091
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.7675,
+        "stddev": 0.1758,
+        "min": 0.6,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 29.475,
+        "stddev": 9.6955,
+        "min": 19.0,
+        "max": 38.5
+      },
+      "tokens": {
+        "mean": 54096.5,
+        "stddev": 1303.0287,
+        "min": 53118,
+        "max": 55888
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.23",
+      "time_seconds": "+5.3",
+      "tokens": "+6618"
+    }
+  },
+  "notes": []
+}

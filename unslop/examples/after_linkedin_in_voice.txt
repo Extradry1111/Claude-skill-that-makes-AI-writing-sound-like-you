@@ -1,0 +1,9 @@
+some news: i joined Northwind as Head of Growth.
+
+i spent the last 6 years at Contoso, where we went from 40,000 users to 1.2M. people keep asking what the trick was. honestly it's boring. we listened to customers, mostly by [how: support tickets, calls, something else], and built whatever kept coming up.
+
+that wasn't just me. [names] did [what they actually did], and i'll miss working with them.
+
+if you work on growth and want to compare notes, ping me.
+
+- j

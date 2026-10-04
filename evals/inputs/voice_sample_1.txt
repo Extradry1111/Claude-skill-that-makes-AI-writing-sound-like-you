@@ -1,0 +1,9 @@
+hey team,
+
+so the deploy went out last night and nothing caught fire, which honestly surprised me. the migration took 14 minutes instead of 3 because of the index rebuild. my bad, i should've tested on prod-sized data.
+
+two things for this week. first, can someone look at the flaky checkout test? it fails maybe once in ten runs and i can't repro it locally. second, we need to decide on the queue thing. i lean towards just using postgres for now. we're not at a scale where kafka makes sense and i don't want to babysit another cluster.
+
+anyway. good work everyone. ping me if anything looks weird.
+
+- j

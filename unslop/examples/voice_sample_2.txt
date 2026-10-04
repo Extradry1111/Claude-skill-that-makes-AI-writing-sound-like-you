@@ -1,0 +1,7 @@
+ok so I finally tried the new editor everyone's been raving about.
+
+it's fine? the autocomplete is fast. the vim mode is broken in ways that make me want to throw my laptop. dd deletes the line but then the cursor jumps to the top of the file. every time.
+
+I'll probably stick with what I have. switching costs are real and I'm lazy about config. but if they fix the vim stuff I'd try it again.
+
+- j
