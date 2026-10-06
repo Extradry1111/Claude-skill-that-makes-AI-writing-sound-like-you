@@ -1,6 +1,6 @@
 # 30 Grok Bot template ideas, ranked by retention
 
-Each idea is scored with the `/template-forge` tests: recurring job, routine-able, live data, personal memory, 30-second win and shareable, each out of 5, for a total out of 30. These are judgment calls, not usage data. Treat them as a starting point.
+Each idea is scored with the six tests in `stickiness.md`: recurring job, routine-able, live data, personal memory, 30-second win and shareable, each out of 5, for a total out of 30. These are judgment calls, not usage data. Treat them as a starting point.
 
 ## S tier (26-30): runs daily on its own and gets better with memory
 
